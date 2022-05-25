@@ -13,11 +13,13 @@ Original file is located at
 Напишите **рекурсивную** функцию ```fact```, которая вычисляет факториал заданного числа ```x```.
 """
 
+
 def fact(x):
     if x == 1 or x == 0:
         return 1
     else:
         return fact(x - 1) * x
+
 
 fact(3)
 
@@ -25,8 +27,9 @@ fact(3)
  Создайте функцию ```filter_even```, которая принимает на вход список целых чисел,  и фильтруя, возвращает список, содержащий только четные числа. Используйте ```filter``` для фильтрации и  ```lambda```.
 """
 
+
 def filter_even(li):
-  return list(filter(lambda x: x % 2 == 0, li))
+    return list(filter(lambda x: x % 2 == 0, li))
 
 
 print(filter_even([1, 2, 3, 4, 5, 6]))
@@ -35,8 +38,10 @@ print(filter_even([1, 2, 3, 4, 5, 6]))
 Напишите функцию ```square``` ,которая принимает на вход список целых чисел и возвращает список с возведенными в квадрат элементами. Используйте ```map```.
 """
 
+
 def square(li):
-  return list(map(lambda x: x ** 2, li))
+    return list(map(lambda x: x ** 2, li))
+
 
 print(square([1, 2 ,3]))
 
@@ -62,18 +67,19 @@ print(square([1, 2 ,3]))
 ```
 """
 
+
 def bin_search(li, element):
-  l = 0
-  r = len(li) - 1
-  while r >= l:
-      mid = (r + l) // 2
-      if li[mid] > element:
-          r = mid - 1
-      elif li[mid] < element:
-          l = mid + 1
-      else:
-          return mid
-  return -1
+      l = 0
+      r = len(li) - 1
+      while r >= l:
+          mid = (r + l) // 2
+          if li[mid] > element:
+              r = mid - 1
+          elif li[mid] < element:
+              l = mid + 1
+          else:
+              return mid
+      return -1
 
 
 print(bin_search([1, 2, 3, 4, 5], 4))
@@ -109,16 +115,18 @@ YES
 ```
 """
 
+
 def is_palindrome(string):
     string = ''.join(filter(lambda x: x.isalpha(), string))
     start = 0
     finish = len(string) - 1
     while start != len(string) // 2:
-      if string[start].lower() != string[finish].lower():
-        return "NO"
-      start += 1
-      finish -= 1
+        if string[start].lower() != string[finish].lower():
+            return "NO"
+        start += 1
+        finish -= 1
     return "YES"
+
 
 print(is_palindrome("Madam, I'm Adam"))
 
@@ -253,6 +261,7 @@ vrNOQoxUbyiZombbLaYqBHvydPJlvdspwwpgeLNlHMVYrZvPsQkcQgP KdYYlKKRrYGNWEXTYXOpQqrd
 [Пример выходной строки для двух файлов выше содержится в этом файле.](https://drive.google.com/file/d/11Lsq1DV8iuMsZ_LPuTj50w5Htq1-95Ys/view?usp=sharing)
 """
 
+
 def load_file(filename):
     file = open(filename, encoding='utf-8')
     data = [line for line in file.readlines()]
@@ -341,6 +350,7 @@ print(decoded_ch('NOTiFICaTiON'))
 
 """
 
+
 class Student:
     def __init__(self, name, surname, grades=None):
         self.name = name
@@ -386,6 +396,7 @@ main_1()
 
 
 """
+
 
 class MyError(Exception):
     def __init__(self, msg):
