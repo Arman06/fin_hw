@@ -45,8 +45,6 @@ def is_palindrome(string):
     return "YES"
 
 
-
-
 # 6
 OPS = {'+': lambda x, y: x + y, '-': lambda x, y: x - y,
        '*': lambda x, y: x * y, '//': lambda x, y: x // y,
@@ -79,7 +77,7 @@ def calculate(path2file):
 
 
 # 7
-def load_file(filename):
+def load_file2(filename):
     file = open(filename, encoding='utf-8')
     data = [line for line in file.readlines()]
     file.close()
@@ -87,8 +85,8 @@ def load_file(filename):
 
 
 def substring_slice(path2file_1, path2file_2):
-    data_1 = load_file(path2file_1)
-    data_2 = load_file(path2file_2)
+    data_1 = load_file2(path2file_1)
+    data_2 = load_file2(path2file_2)
     result = []
     for line_1, line_2 in zip(data_1, data_2):
         start_index, end_index = map(int, line_2.strip().split())
@@ -100,7 +98,7 @@ def substring_slice(path2file_1, path2file_2):
 import json
 
 
-def decoded_ch(string_of_elements):
+def decode_ch(string_of_elements):
     periodic_table = json.load(open('periodic_table.json', encoding='utf-8'))
     search_index = 1
     result = ''
@@ -116,8 +114,6 @@ def decoded_ch(string_of_elements):
     return result
 
 
-
-
 # 9
 class Student:
     def __init__(self, name, surname, grades=None):
@@ -129,12 +125,12 @@ class Student:
         self.grades = grades
 
     def is_otlichnik(self):
-        return 'Yes' if self.mean_grades() >= 4.5 else 'NO'
+        return 'Yes' if self.mean_grade() >= 4.5 else 'NO'
 
     def greeting(self):
         return f'Hello, I am {self.fullname}'
 
-    def mean_grades(self):
+    def mean_grade(self):
         return sum(self.grades) / len(self.grades)
 
     def __add__(self, other):
